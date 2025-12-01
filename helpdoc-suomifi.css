@@ -1,0 +1,687 @@
+/* Suomi.fi fontti käyttöön */
+@import url('https://designsystem.suomi.fi/fonts/source-sans-pro.css');
+
+/* Token-tyyliset muuttujat suomi.fi-väreille */
+.helpdoc-suomifi {
+  /* Brand colors */
+  --fi-color-brand-base: #003479;      /* brandBase */
+  --fi-color-brand-dark-1: #002855;   /* brandDark1 */
+  --fi-color-brand-light-1: #004a9f;   /* brandLight1 */
+  
+  /* Text colors */
+  --fi-color-text: #212121;            /* blackBase */
+  --fi-color-text-secondary: #565656;  /* blackLight1 */
+  
+  /* Depth colors (grays) */
+  --fi-color-depth-base: #a5acb1;      /* depthBase */
+  --fi-color-depth-dark-1: #6c757d;    /* depthDark1 */
+  --fi-color-depth-light-1: #c8cdd0;   /* depthLight1 */
+  --fi-color-depth-light-2: #e0e3e5;   /* depthLight2 */
+  --fi-color-depth-light-3: #f7f7f8;   /* depthLight3 */
+  
+  /* Highlight colors (blue) */
+  --fi-color-highlight-base: #2a6ebb;  /* highlightBase */
+  --fi-color-highlight-dark-1: #235a9a; /* highlightDark1 */
+  --fi-color-highlight-light-1: #4a8bc8; /* highlightLight1 */
+  --fi-color-highlight-light-2: #d5e4f6; /* highlightLight2 */
+  
+  /* Status colors */
+  --fi-color-success-base: #09a580;    /* successBase */
+  --fi-color-success-light-1: #0bb592; /* successLight1 */
+  --fi-color-success-light-2: #d4f4eb; /* successLight2 */
+  --fi-color-warning-base: #f6af09;    /* warningBase */
+  --fi-color-warning-light-1: #ffc107; /* warningLight1 */
+  --fi-color-warning-light-2: #fff4e5; /* warningLight2 */
+  --fi-color-alert-base: #ae332d;      /* alertBase */
+  --fi-color-alert-light-1: #c93a33;   /* alertLight1 */
+  --fi-color-alert-light-2: #fde7e9;   /* alertLight2 */
+  --fi-color-accent-base: #e86717;     /* accentBase */
+  --fi-color-accent-light-1: #ff8c42;  /* accentLight1 */
+  --fi-color-accent-light-2: #ffe5d4;  /* accentLight2 */
+  
+  /* Tertiary colors (purple/violet) */
+  --fi-color-accent-tertiary-dark-1: #5A2D82; /* accentTertiaryDark1 - used for visited links */
+  
+  /* Focus color */
+  --fi-color-focus: #1a99c7;           /* accentSecondary / focus */
+  
+  /* Spacing tokens */
+  --fi-spacing-xs: 4px;
+  --fi-spacing-s: 8px;
+  --fi-spacing-m: 12px;
+  --fi-spacing-l: 16px;
+  --fi-spacing-xl: 24px;
+  --fi-spacing-xxl: 32px;
+
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--fi-color-text);
+  background-color: #ffffff;
+  line-height: 1.6;
+  padding: var(--fi-spacing-xl) var(--fi-spacing-xxl);
+  width: fit-content;
+}
+
+/* ============================================
+   OTSIKOT
+   ============================================ */
+
+.helpdoc-suomifi h1 {
+  font-size: 2.25rem; /* 36px */
+  font-weight: 300;
+  color: var(--fi-color-text);
+  margin: 0 0 var(--fi-spacing-m);
+  line-height: 1.3;
+}
+
+.helpdoc-suomifi h2 {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600;
+  margin: var(--fi-spacing-xxl) 0 var(--fi-spacing-m);
+  line-height: 1.4;
+  color: var(--fi-color-text);
+}
+
+.helpdoc-suomifi h3 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  margin: var(--fi-spacing-xl) 0 var(--fi-spacing-s);
+  line-height: 1.4;
+  color: var(--fi-color-text);
+}
+
+.helpdoc-suomifi h4 {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+  margin: var(--fi-spacing-xl) 0 var(--fi-spacing-s);
+  line-height: 1.4;
+  color: var(--fi-color-text);
+}
+
+.helpdoc-suomifi h5 {
+  font-size: 1rem; /* 16px */
+  font-weight: 600;
+  margin: var(--fi-spacing-l) 0 var(--fi-spacing-s);
+  line-height: 1.5;
+  color: var(--fi-color-text);
+}
+
+/* ============================================
+   TEKSTI & MUOTOILU
+   ============================================ */
+
+.helpdoc-suomifi p,
+.helpdoc-suomifi li {
+  font-size: 1rem; /* 16px */
+  color: var(--fi-color-text);
+  margin: var(--fi-spacing-s) 0;
+  line-height: 1.6;
+}
+
+/* Tekstin muotoilu: bold, italic, underline, strikethrough */
+.helpdoc-suomifi strong,
+.helpdoc-suomifi b {
+  font-weight: 600;
+  color: var(--fi-color-text);
+}
+
+.helpdoc-suomifi em,
+.helpdoc-suomifi i {
+  font-style: italic;
+}
+
+.helpdoc-suomifi u {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.helpdoc-suomifi s,
+.helpdoc-suomifi strike,
+.helpdoc-suomifi del {
+  text-decoration: line-through;
+  color: var(--fi-color-text-secondary);
+}
+
+/* Superscript ja subscript */
+.helpdoc-suomifi sup {
+  vertical-align: super;
+  font-size: 0.75em;
+  line-height: 0;
+}
+
+.helpdoc-suomifi sub {
+  vertical-align: sub;
+  font-size: 0.75em;
+  line-height: 0;
+}
+
+/* Mark/highlight */
+.helpdoc-suomifi mark {
+  background-color: var(--fi-color-warning-light-2);
+  color: var(--fi-color-text);
+  padding: 2px 4px;
+}
+
+/* Blockquote */
+.helpdoc-suomifi blockquote {
+  margin: var(--fi-spacing-l) 0;
+  padding: var(--fi-spacing-l);
+  padding-left: var(--fi-spacing-xl);
+  border-left: 4px solid var(--fi-color-highlight-base);
+  background-color: var(--fi-color-depth-light-3);
+  color: var(--fi-color-text);
+  font-style: italic;
+}
+
+.helpdoc-suomifi blockquote p {
+  margin: 0;
+}
+
+/* Linkit - suomi.fi design system */
+.helpdoc-suomifi a {
+  color: var(--fi-color-highlight-base);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.helpdoc-suomifi a:hover {
+  color: var(--fi-color-highlight-dark-1);
+  text-decoration: underline;
+}
+
+.helpdoc-suomifi a:focus {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+  color: var(--fi-color-highlight-dark-1);
+  text-decoration: underline;
+}
+
+.helpdoc-suomifi a:visited {
+  color: var(--fi-color-accent-tertiary-dark-1); /* Violetti väri visited-linkeille */
+}
+
+.helpdoc-suomifi a:visited:hover {
+  color: var(--fi-color-accent-tertiary-dark-1);
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.helpdoc-suomifi a:visited:focus {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+  color: var(--fi-color-accent-tertiary-dark-1);
+}
+
+.helpdoc-suomifi a:active {
+  color: var(--fi-color-highlight-dark-1);
+  text-decoration: underline;
+}
+
+/* Clicked links - shown in violet color */
+.helpdoc-suomifi a.clicked-link {
+  color: var(--fi-color-accent-tertiary-dark-1) !important; /* Violetti väri klikatuille linkeille */
+}
+
+.helpdoc-suomifi a.clicked-link:hover {
+  color: var(--fi-color-accent-tertiary-dark-1) !important;
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.helpdoc-suomifi a.clicked-link:focus {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+  color: var(--fi-color-accent-tertiary-dark-1) !important;
+}
+
+/* Horizontal rule */
+.helpdoc-suomifi hr {
+  border: 0;
+  border-top: 1px solid var(--fi-color-depth-light-1);
+  margin: var(--fi-spacing-xl) 0;
+  background: none;
+}
+
+/* ============================================
+   PANEELIT (Info / Warning / Error / Success / Note)
+   ============================================ */
+
+.helpdoc-suomifi .helpdoc-panel {
+  display: flex;
+  gap: var(--fi-spacing-m);
+  align-items: flex-start;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid var(--fi-color-depth-light-1);
+  border-top-width: 4px;
+  border-top-style: solid;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  padding: var(--fi-spacing-m) var(--fi-spacing-l);
+  margin: 0 0 var(--fi-spacing-s);
+}
+
+/* Variantit liikennevalo- ja brandiväreillä */
+/* Suomi.fi notification käyttää valkoista taustaa, väri tulee vain yläreunasta */
+.helpdoc-suomifi .helpdoc-panel--info {
+  border-top-color: var(--fi-color-highlight-base);
+  background-color: #ffffff;
+}
+
+.helpdoc-suomifi .helpdoc-panel--warning {
+  border-top-color: var(--fi-color-warning-base);
+  background-color: #ffffff;
+}
+
+.helpdoc-suomifi .helpdoc-panel--error {
+  border-top-color: var(--fi-color-alert-base);
+  background-color: #ffffff;
+}
+
+.helpdoc-suomifi .helpdoc-panel--success {
+  border-top-color: var(--fi-color-success-base);
+  background-color: #ffffff;
+}
+
+.helpdoc-suomifi .helpdoc-panel--note {
+  border-top-color: var(--fi-color-accent-base);
+  background-color: #ffffff;
+}
+
+/* Ikoniympyrä vasemmassa laidassa */
+.helpdoc-suomifi .helpdoc-panel__icon {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.helpdoc-suomifi .helpdoc-panel--info .helpdoc-panel__icon {
+  background-color: var(--fi-color-highlight-base);
+}
+
+.helpdoc-suomifi .helpdoc-panel--warning .helpdoc-panel__icon {
+  background-color: var(--fi-color-warning-base);
+}
+
+.helpdoc-suomifi .helpdoc-panel--error .helpdoc-panel__icon {
+  background-color: var(--fi-color-alert-base);
+}
+
+.helpdoc-suomifi .helpdoc-panel--success .helpdoc-panel__icon {
+  background-color: var(--fi-color-success-base);
+}
+
+.helpdoc-suomifi .helpdoc-panel--note .helpdoc-panel__icon {
+  background-color: var(--fi-color-accent-base);
+}
+
+.helpdoc-suomifi .helpdoc-panel__content {
+  flex: 1 1 auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.helpdoc-suomifi .helpdoc-panel__content strong {
+  display: block;
+  margin-bottom: var(--fi-spacing-xs);
+}
+
+/* ============================================
+   TAULUKOT
+   ============================================ */
+
+.helpdoc-suomifi table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--fi-spacing-m) 0 var(--fi-spacing-s);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.helpdoc-suomifi th,
+.helpdoc-suomifi td {
+  border: 1px solid var(--fi-color-depth-light-1);
+  padding: var(--fi-spacing-s) var(--fi-spacing-m);
+  text-align: left;
+}
+
+/* Header-osa: brand-sininen tausta, valkoinen teksti */
+.helpdoc-suomifi th {
+  background-color: var(--fi-color-brand-base);
+  color: #ffffff;
+  font-weight: 600;
+  vertical-align: top;
+}
+
+.helpdoc-suomifi td {
+  background-color: #ffffff;
+  vertical-align: top;
+}
+
+/* Focus-tila soluille (saavutettavuus) */
+.helpdoc-suomifi th:focus,
+.helpdoc-suomifi td:focus {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: -2px;
+  background-color: var(--fi-color-highlight-light-2);
+}
+
+/* Zebra striping (vaihtoehtoinen) */
+.helpdoc-suomifi tbody tr:nth-child(even) td {
+  background-color: var(--fi-color-depth-light-3);
+}
+
+/* Hover-efekti riville */
+.helpdoc-suomifi tbody tr:hover td {
+  background-color: var(--fi-color-highlight-light-2);
+}
+
+.helpdoc-suomifi tbody tr:focus-within td {
+  background-color: var(--fi-color-highlight-light-2);
+}
+
+/* ============================================
+   KOODILOHKOT
+   ============================================ */
+
+/* Inline-koodi */
+.helpdoc-suomifi code:not(pre code) {
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9em;
+  background-color: var(--fi-color-depth-light-3);
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: var(--fi-color-text);
+  border: 1px solid var(--fi-color-depth-light-2);
+}
+
+/* Monirivinen code-block */
+.helpdoc-suomifi pre {
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9rem;
+  background-color: var(--fi-color-depth-light-3);
+  padding: var(--fi-spacing-s) var(--fi-spacing-m);
+  border-radius: 4px;
+  border: 1px solid var(--fi-color-depth-light-1);
+  overflow-x: auto;
+  margin: var(--fi-spacing-s) 0;
+  line-height: 1.5;
+}
+
+.helpdoc-suomifi pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  font-size: inherit;
+}
+
+/* ============================================
+   EXPANDER-HEADER (accordion-otsikko)
+   ============================================ */
+
+.helpdoc-suomifi .helpdoc-expander {
+  border: 1px solid var(--fi-color-depth-light-1);
+  border-radius: 4px;
+  margin: var(--fi-spacing-s) 0 var(--fi-spacing-m);
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.helpdoc-suomifi .helpdoc-expander__header {
+  width: 100%;
+  background-color: #ffffff;
+  border: none;
+  padding: var(--fi-spacing-s) var(--fi-spacing-l);
+  font-size: 1rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: var(--fi-color-text);
+  transition: background-color 0.2s ease;
+  font-family: inherit;
+}
+
+.helpdoc-suomifi .helpdoc-expander__header:hover {
+  background-color: var(--fi-color-depth-light-3);
+}
+
+.helpdoc-suomifi .helpdoc-expander__header:active {
+  background-color: var(--fi-color-depth-light-2);
+}
+
+.helpdoc-suomifi .helpdoc-expander__header:focus-visible {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: -3px;
+}
+
+.helpdoc-suomifi .helpdoc-expander__chevron {
+  font-size: 0.9rem;
+  color: var(--fi-color-depth-base);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  margin-left: var(--fi-spacing-s);
+}
+
+.helpdoc-suomifi .helpdoc-expander[aria-expanded="true"] .helpdoc-expander__chevron {
+  transform: rotate(180deg);
+}
+
+.helpdoc-suomifi .helpdoc-expander__content {
+  padding: var(--fi-spacing-s) var(--fi-spacing-l) var(--fi-spacing-m);
+  border-top: 1px solid var(--fi-color-depth-light-1);
+  background-color: #ffffff;
+}
+
+/* ============================================
+   STATUS-BADGE
+   ============================================ */
+
+.helpdoc-suomifi .helpdoc-status {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--fi-spacing-xs) var(--fi-spacing-s);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* Sininen tila */
+.helpdoc-suomifi .helpdoc-status--pending {
+  background-color: var(--fi-color-highlight-base);
+  color: #ffffff;
+}
+
+/* Vihreä onnistumiselle */
+.helpdoc-suomifi .helpdoc-status--success {
+  background-color: var(--fi-color-success-base);
+  color: #ffffff;
+}
+
+/* Kelta/oranssi varoitukselle */
+.helpdoc-suomifi .helpdoc-status--warning {
+  background-color: var(--fi-color-warning-base);
+  color: #ffffff;
+}
+
+/* Punainen virheelle */
+.helpdoc-suomifi .helpdoc-status--error {
+  background-color: var(--fi-color-alert-base);
+  color: #ffffff;
+}
+
+/* ============================================
+   LISTAT JA CHECKBOXIT
+   ============================================ */
+
+.helpdoc-suomifi ul,
+.helpdoc-suomifi ol {
+  padding-left: 1.4rem;
+  margin: var(--fi-spacing-xs) 0;
+}
+
+.helpdoc-suomifi ul {
+  list-style-type: disc;
+}
+
+.helpdoc-suomifi ol {
+  list-style-type: decimal;
+}
+
+.helpdoc-suomifi li {
+  margin: var(--fi-spacing-xs) 0;
+  line-height: 1.6;
+}
+
+/* Nested lists */
+.helpdoc-suomifi ul ul,
+.helpdoc-suomifi ol ol,
+.helpdoc-suomifi ul ol,
+.helpdoc-suomifi ol ul {
+  margin-top: var(--fi-spacing-xs);
+  margin-bottom: var(--fi-spacing-xs);
+}
+
+/* Action item -rivi (task list) */
+.helpdoc-suomifi .helpdoc-task {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--fi-spacing-s);
+  margin: var(--fi-spacing-xs) 0;
+  line-height: 1.6;
+}
+
+.helpdoc-suomifi .helpdoc-task input[type="checkbox"] {
+  margin-top: 3px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--fi-color-highlight-base);
+  transition: accent-color 0.2s ease;
+}
+
+.helpdoc-suomifi .helpdoc-task input[type="checkbox"]:hover:not(:disabled) {
+  accent-color: var(--fi-color-highlight-dark-1);
+}
+
+.helpdoc-suomifi .helpdoc-task input[type="checkbox"]:focus {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+}
+
+.helpdoc-suomifi .helpdoc-task input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  accent-color: var(--fi-color-depth-base);
+}
+
+.helpdoc-suomifi .helpdoc-task input[type="checkbox"]:disabled:focus {
+  outline: 2px solid var(--fi-color-depth-base);
+  outline-offset: 2px;
+}
+
+.helpdoc-suomifi .helpdoc-task label {
+  cursor: pointer;
+  flex: 1;
+  transition: color 0.2s ease;
+}
+
+.helpdoc-suomifi .helpdoc-task input[type="checkbox"]:hover:not(:disabled) + label {
+  color: var(--fi-color-highlight-base);
+}
+
+.helpdoc-suomifi .helpdoc-task input[type="checkbox"]:disabled + label {
+  color: var(--fi-color-text-secondary);
+  cursor: not-allowed;
+}
+
+/* ============================================
+   KUVAT
+   ============================================ */
+
+.helpdoc-suomifi img {
+  max-width: 100%;
+  height: auto;
+  margin: var(--fi-spacing-m) 0;
+  border-radius: 4px;
+  display: block;
+}
+
+.helpdoc-suomifi figure {
+  margin: var(--fi-spacing-m) 0;
+  display: block;
+}
+
+.helpdoc-suomifi figure > img,
+.helpdoc-suomifi figure > div {
+  margin: 0;
+  display: block;
+}
+
+.helpdoc-suomifi figcaption {
+  font-size: 0.9rem;
+  color: var(--fi-color-text-secondary);
+  margin-top: var(--fi-spacing-xs);
+  font-style: italic;
+  text-align: left;
+  display: block;
+}
+
+/* ============================================
+   YLEISET SIISTIMISET
+   ============================================ */
+
+/* Poista oletusmarginaalit */
+.helpdoc-suomifi * {
+  box-sizing: border-box;
+}
+
+/* Paragrafeille oletusmarginaali */
+.helpdoc-suomifi p:first-child {
+  margin-top: 0;
+}
+
+.helpdoc-suomifi p:last-child {
+  margin-bottom: 0;
+}
+
+/* Selection color */
+.helpdoc-suomifi ::selection {
+  background-color: var(--fi-color-highlight-light-2);
+  color: var(--fi-color-text);
+}
+
+.helpdoc-suomifi ::-moz-selection {
+  background-color: var(--fi-color-highlight-light-2);
+  color: var(--fi-color-text);
+}
+
+/* Print styles */
+@media print {
+  .helpdoc-suomifi {
+    padding: 0;
+    max-width: 100%;
+  }
+  
+  .helpdoc-suomifi .helpdoc-expander__content {
+    display: block !important;
+  }
+  
+  .helpdoc-suomifi .helpdoc-expander__header {
+    cursor: default;
+  }
+}
