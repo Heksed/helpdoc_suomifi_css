@@ -1,6 +1,23 @@
 /* Suomi.fi fontti käyttöön */
 @import url('https://designsystem.suomi.fi/fonts/source-sans-pro.css');
 
+/* Body ja HTML perusasettelut */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: inherit;
+}
+
 /* Token-tyyliset muuttujat suomi.fi-väreille */
 .helpdoc-suomifi {
   /* Brand colors */
@@ -54,11 +71,18 @@
   --fi-spacing-xxl: 32px;
 
   font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; /* Varmistaa perusfonttikoon */
   color: var(--fi-color-text);
   background-color: #ffffff;
   line-height: 1.6;
+  
+  /* Keskitys ja leveys */
+  max-width: 1240px; /* Desktop standardi */
+  margin-left: auto;
+  margin-right: auto; /* Keskittää sisällön */
   padding: var(--fi-spacing-xl) var(--fi-spacing-xxl);
-  width: fit-content;
+  box-sizing: border-box;
+  display: block;
 }
 
 /* ============================================
@@ -696,6 +720,38 @@
 .helpdoc-suomifi ::-moz-selection {
   background-color: var(--fi-color-highlight-light-2);
   color: var(--fi-color-text);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  .helpdoc-suomifi {
+    max-width: 100%;
+    padding: var(--fi-spacing-xl) var(--fi-spacing-l);
+  }
+}
+
+/* Mobile (alle 768px) */
+@media screen and (max-width: 768px) {
+  .helpdoc-suomifi {
+    max-width: 100%;
+    padding: var(--fi-spacing-l) var(--fi-spacing-m);
+  }
+  
+  .helpdoc-suomifi h1 {
+    font-size: 1.75rem; /* 28px */
+  }
+  
+  .helpdoc-suomifi h2 {
+    font-size: 1.25rem; /* 20px */
+  }
+  
+  .helpdoc-suomifi h3 {
+    font-size: 1.125rem; /* 18px */
+  }
 }
 
 /* Print styles */
