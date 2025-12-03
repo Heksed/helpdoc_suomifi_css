@@ -287,50 +287,63 @@
   background-color: #ffffff;
 }
 
-/* Ikoniympyrä vasemmassa laidassa */
+/* Ikoni vasemmassa laidassa - ei värillistä palloa */
 .helpdoc-suomifi .helpdoc-panel__icon {
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
   min-width: 24px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   font-weight: 600;
-  color: #ffffff;
   line-height: 1;
 }
 
-.helpdoc-suomifi .helpdoc-panel--info .helpdoc-panel__icon {
-  background-color: var(--fi-color-highlight-base);
+/* SVG-ikonit paneelien ikoneissa - käyttää paneelin väriä */
+.helpdoc-suomifi .helpdoc-panel__icon-svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-.helpdoc-suomifi .helpdoc-panel--warning .helpdoc-panel__icon {
-  background-color: var(--fi-color-warning-base);
+/* Info-paneelin ikoni - sininen (highlight-base: #2a6ebb) */
+.helpdoc-suomifi .helpdoc-panel--info .helpdoc-panel__icon-svg {
+  filter: brightness(0) saturate(100%) invert(42%) sepia(95%) saturate(2000%) hue-rotate(195deg) brightness(0.85) contrast(1.1);
 }
 
-.helpdoc-suomifi .helpdoc-panel--error .helpdoc-panel__icon {
-  background-color: var(--fi-color-alert-base);
+/* Warning-paneelin ikoni - keltainen (warning-base: #f6af09) */
+.helpdoc-suomifi .helpdoc-panel--warning .helpdoc-panel__icon-svg {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(95%) saturate(2000%) hue-rotate(5deg) brightness(1.05) contrast(1);
 }
 
-.helpdoc-suomifi .helpdoc-panel--success .helpdoc-panel__icon {
-  background-color: var(--fi-color-success-base);
+/* Error-paneelin ikoni - punainen (alert-base: #ae332d) */
+.helpdoc-suomifi .helpdoc-panel--error .helpdoc-panel__icon-svg {
+  filter: brightness(0) saturate(100%) invert(19%) sepia(95%) saturate(2000%) hue-rotate(340deg) brightness(0.85) contrast(1.1);
 }
 
-.helpdoc-suomifi .helpdoc-panel--note .helpdoc-panel__icon {
-  background-color: var(--fi-color-accent-base);
+/* Success-paneelin ikoni - vihreä (success-base: #09a580) */
+.helpdoc-suomifi .helpdoc-panel--success .helpdoc-panel__icon-svg {
+  filter: brightness(0) saturate(100%) invert(49%) sepia(95%) saturate(2000%) hue-rotate(130deg) brightness(0.9) contrast(1);
+}
+
+/* Note-paneelin ikoni - oranssi (accent-base: #e86717) */
+.helpdoc-suomifi .helpdoc-panel--note .helpdoc-panel__icon-svg {
+  filter: brightness(0) saturate(100%) invert(52%) sepia(95%) saturate(2000%) hue-rotate(5deg) brightness(1.1) contrast(1);
 }
 
 .helpdoc-suomifi .helpdoc-panel__content {
   flex: 1 1 auto;
-  font-size: 0.95rem;
+  font-size: 16px;
   line-height: 1.6;
 }
 
 .helpdoc-suomifi .helpdoc-panel__content strong {
   display: block;
+  font-size: 18px;
   margin-bottom: var(--fi-spacing-xs);
 }
 
@@ -471,9 +484,24 @@
   transition: transform 0.2s ease;
   flex-shrink: 0;
   margin-left: var(--fi-spacing-s);
+  display: flex;
+  align-items: center;
+}
+
+/* SVG-ikonit expander-chevroneissa */
+.helpdoc-suomifi .helpdoc-expander__chevron-svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
 
 .helpdoc-suomifi .helpdoc-expander[aria-expanded="true"] .helpdoc-expander__chevron {
+  transform: rotate(180deg);
+}
+
+.helpdoc-suomifi .helpdoc-expander[aria-expanded="true"] .helpdoc-expander__chevron-svg {
   transform: rotate(180deg);
 }
 
@@ -685,3 +713,4 @@
     cursor: default;
   }
 }
+
