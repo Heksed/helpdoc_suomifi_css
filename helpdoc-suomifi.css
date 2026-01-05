@@ -1,3 +1,13 @@
+/**
+ * Helpdoc Suomi.fi Design System - CSS-tyylit
+ * 
+ * Tämä tiedosto sisältää kaikki suomi.fi design systemin mukaiset tyylit
+ * editori-sovellukseen. Tyylit noudattavat suomi.fi design systemin
+ * väri-, typografia- ja spacing-tokenien konventioita.
+ * 
+ * @see https://designsystem.suomi.fi/
+ */
+
 /* Suomi.fi fontti käyttöön */
 @import url('https://designsystem.suomi.fi/fonts/source-sans-pro.css');
 
@@ -71,10 +81,11 @@ body {
   --fi-spacing-xxl: 32px;
 
   font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px; /* Varmistaa perusfonttikoon */
+  font-size: 16px; /* bodyText */
+  font-weight: 400;
+  line-height: 24px; /* 1.5 */
   color: var(--fi-color-text);
   background-color: #ffffff;
-  line-height: 1.6;
   
   /* Keskitys ja leveys */
   max-width: 1240px; /* Desktop standardi */
@@ -86,46 +97,54 @@ body {
 }
 
 /* ============================================
-   OTSIKOT
+   OTSIKOT - Suomi.fi Design System
    ============================================ */
 
 .helpdoc-suomifi h1 {
-  font-size: 2.25rem; /* 36px */
+  font-size: 40px; /* heading1 */
   font-weight: 300;
+  line-height: 48px; /* 1.2 */
   color: var(--fi-color-text);
   margin: 0 0 var(--fi-spacing-m);
-  line-height: 1.3;
 }
 
 .helpdoc-suomifi h2 {
-  font-size: 1.5rem; /* 24px */
-  font-weight: 600;
+  font-size: 32px; /* heading2 */
+  font-weight: 300;
+  line-height: 40px; /* 1.25 */
   margin: var(--fi-spacing-xxl) 0 var(--fi-spacing-m);
-  line-height: 1.4;
   color: var(--fi-color-text);
 }
 
 .helpdoc-suomifi h3 {
-  font-size: 1.25rem; /* 20px */
-  font-weight: 600;
+  font-size: 24px; /* heading3 */
+  font-weight: 300;
+  line-height: 32px; /* 1.33 */
   margin: var(--fi-spacing-xl) 0 var(--fi-spacing-s);
-  line-height: 1.4;
   color: var(--fi-color-text);
 }
 
 .helpdoc-suomifi h4 {
-  font-size: 1.125rem; /* 18px */
-  font-weight: 600;
+  font-size: 20px; /* heading4 */
+  font-weight: 300;
+  line-height: 28px; /* 1.4 */
   margin: var(--fi-spacing-xl) 0 var(--fi-spacing-s);
-  line-height: 1.4;
   color: var(--fi-color-text);
 }
 
 .helpdoc-suomifi h5 {
-  font-size: 1rem; /* 16px */
-  font-weight: 600;
+  font-size: 18px; /* heading5 */
+  font-weight: 300;
+  line-height: 24px; /* 1.33 */
   margin: var(--fi-spacing-l) 0 var(--fi-spacing-s);
-  line-height: 1.5;
+  color: var(--fi-color-text);
+}
+
+.helpdoc-suomifi h6 {
+  font-size: 16px; /* heading6 */
+  font-weight: 300;
+  line-height: 24px; /* 1.5 */
+  margin: var(--fi-spacing-l) 0 var(--fi-spacing-s);
   color: var(--fi-color-text);
 }
 
@@ -135,10 +154,11 @@ body {
 
 .helpdoc-suomifi p,
 .helpdoc-suomifi li {
-  font-size: 1rem; /* 16px */
+  font-size: 16px; /* bodyText */
+  font-weight: 400;
+  line-height: 24px; /* 1.5 */
   color: var(--fi-color-text);
   margin: var(--fi-spacing-s) 0;
-  line-height: 1.6;
 }
 
 /* Tekstin muotoilu: bold, italic, underline, strikethrough */
@@ -267,6 +287,303 @@ body {
 }
 
 /* ============================================
+   PAINIKKEET (Buttons) - Suomi.fi Design System
+   ============================================ */
+
+/* Perus button-tyylit */
+.helpdoc-suomifi button,
+.helpdoc-suomifi .helpdoc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 20px; /* Suomi.fi design system: 9px ylä/ala, 20px vasen/oikea */
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px; /* 1.43 */
+  text-align: center;
+  text-decoration: none;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  /* min-height poistettu - padding (9px + 9px) + line-height (20px) = 38px */
+  box-sizing: border-box;
+}
+
+/* Poista ylimääräinen tila buttonin sisällä olevilta elementeiltä */
+.helpdoc-suomifi button img,
+.helpdoc-suomifi .helpdoc-button img {
+  display: block;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.helpdoc-suomifi button span,
+.helpdoc-suomifi .helpdoc-button span {
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.helpdoc-suomifi button:disabled,
+.helpdoc-suomifi .helpdoc-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ============================================
+   PRIMARY BUTTON (Musta tausta, valkoinen teksti)
+   ============================================ */
+
+.helpdoc-suomifi button.helpdoc-button--primary,
+.helpdoc-suomifi .helpdoc-button--primary {
+  background-color: var(--fi-color-text); /* #212121 - musta */
+  color: #ffffff; /* Valkoinen teksti */
+  border-color: var(--fi-color-text);
+}
+
+.helpdoc-suomifi button.helpdoc-button--primary:hover:not(:disabled),
+.helpdoc-suomifi .helpdoc-button--primary:hover:not(:disabled) {
+  background-color: #3a3a3a; /* Tummempi harmaa hoverissa */
+  border-color: #3a3a3a;
+  color: #ffffff;
+}
+
+.helpdoc-suomifi button.helpdoc-button--primary:focus-visible,
+.helpdoc-suomifi .helpdoc-button--primary:focus-visible {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+  background-color: var(--fi-color-text);
+  border-color: var(--fi-color-text);
+}
+
+.helpdoc-suomifi button.helpdoc-button--primary:active:not(:disabled),
+.helpdoc-suomifi .helpdoc-button--primary:active:not(:disabled) {
+  background-color: #3a3a3a;
+  border-color: #3a3a3a;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.helpdoc-suomifi button.helpdoc-button--primary:disabled,
+.helpdoc-suomifi .helpdoc-button--primary:disabled {
+  background-color: var(--fi-color-depth-base);
+  border-color: var(--fi-color-depth-base);
+  color: #ffffff;
+}
+
+/* ============================================
+   SECONDARY BUTTON (Valkoinen tausta, musta teksti)
+   ============================================ */
+
+.helpdoc-suomifi button.helpdoc-button--secondary,
+.helpdoc-suomifi .helpdoc-button--secondary {
+  background-color: #ffffff; /* Valkoinen tausta */
+  color: var(--fi-color-text); /* #212121 - musta teksti */
+  border-color: var(--fi-color-text); /* Musta border */
+}
+
+.helpdoc-suomifi button.helpdoc-button--secondary:hover:not(:disabled),
+.helpdoc-suomifi .helpdoc-button--secondary:hover:not(:disabled) {
+  background-color: #f5f5f5; /* Vaalea harmaa hoverissa */
+  color: var(--fi-color-text);
+  border-color: var(--fi-color-text);
+}
+
+.helpdoc-suomifi button.helpdoc-button--secondary:focus-visible,
+.helpdoc-suomifi .helpdoc-button--secondary:focus-visible {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+  background-color: #ffffff;
+  color: var(--fi-color-text);
+  border-color: var(--fi-color-text);
+}
+
+.helpdoc-suomifi button.helpdoc-button--secondary:active:not(:disabled),
+.helpdoc-suomifi .helpdoc-button--secondary:active:not(:disabled) {
+  background-color: #e8e8e8; /* Hieman tummempi harmaa active-tilassa */
+  color: var(--fi-color-text);
+  border-color: var(--fi-color-text);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.helpdoc-suomifi button.helpdoc-button--secondary:disabled,
+.helpdoc-suomifi .helpdoc-button--secondary:disabled {
+  background-color: #ffffff;
+  color: var(--fi-color-depth-base);
+  border-color: var(--fi-color-depth-base);
+}
+
+/* ============================================
+   SECONDARY BUTTON NO BORDER (Valkoinen tausta, musta teksti, ei borderia)
+   ============================================ */
+
+.helpdoc-suomifi button.helpdoc-button--secondary-no-border,
+.helpdoc-suomifi .helpdoc-button--secondary-no-border {
+  background-color: transparent;
+  color: var(--fi-color-text); /* #212121 - musta teksti */
+  border: none;
+}
+
+.helpdoc-suomifi button.helpdoc-button--secondary-no-border:hover:not(:disabled),
+.helpdoc-suomifi .helpdoc-button--secondary-no-border:hover:not(:disabled) {
+  background-color: #f5f5f5; /* Vaalea harmaa hoverissa */
+  color: var(--fi-color-text);
+}
+
+.helpdoc-suomifi button.helpdoc-button--secondary-no-border:focus-visible,
+.helpdoc-suomifi .helpdoc-button--secondary-no-border:focus-visible {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+  background-color: transparent;
+  color: var(--fi-color-text);
+}
+
+.helpdoc-suomifi button.helpdoc-button--secondary-no-border:active:not(:disabled),
+.helpdoc-suomifi .helpdoc-button--secondary-no-border:active:not(:disabled) {
+  background-color: #e8e8e8;
+  color: var(--fi-color-text);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.helpdoc-suomifi button.helpdoc-button--secondary-no-border:disabled,
+.helpdoc-suomifi .helpdoc-button--secondary-no-border:disabled {
+  background-color: transparent;
+  color: var(--fi-color-depth-base);
+}
+
+/* ============================================
+   TERTIARY BUTTON (Transparent, musta teksti, alleviivaus)
+   ============================================ */
+
+.helpdoc-suomifi button.helpdoc-button--tertiary,
+.helpdoc-suomifi .helpdoc-button--tertiary {
+  background-color: transparent;
+  color: var(--fi-color-text); /* #212121 - musta teksti */
+  border-color: transparent;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  padding: var(--fi-spacing-s) var(--fi-spacing-m);
+}
+
+.helpdoc-suomifi button.helpdoc-button--tertiary:hover:not(:disabled),
+.helpdoc-suomifi .helpdoc-button--tertiary:hover:not(:disabled) {
+  background-color: #f5f5f5; /* Vaalea harmaa hoverissa */
+  color: var(--fi-color-text);
+  border-color: transparent;
+  text-decoration: underline;
+}
+
+.helpdoc-suomifi button.helpdoc-button--tertiary:focus-visible,
+.helpdoc-suomifi .helpdoc-button--tertiary:focus-visible {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+  background-color: transparent;
+  color: var(--fi-color-text);
+  border-color: transparent;
+  text-decoration: underline;
+}
+
+.helpdoc-suomifi button.helpdoc-button--tertiary:active:not(:disabled),
+.helpdoc-suomifi .helpdoc-button--tertiary:active:not(:disabled) {
+  background-color: #e8e8e8;
+  color: var(--fi-color-text);
+  border-color: transparent;
+  text-decoration: underline;
+}
+
+.helpdoc-suomifi button.helpdoc-button--tertiary:disabled,
+.helpdoc-suomifi .helpdoc-button--tertiary:disabled {
+  background-color: transparent;
+  color: var(--fi-color-depth-base);
+  border-color: transparent;
+  text-decoration: underline;
+}
+
+/* ============================================
+   INPUT-KENTÄT (Text Input, Textarea, Search) - Suomi.fi Design System
+   ============================================ */
+
+/* Perus input-tyylit */
+.helpdoc-suomifi input[type="text"],
+.helpdoc-suomifi input[type="search"],
+.helpdoc-suomifi input[type="email"],
+.helpdoc-suomifi input[type="tel"],
+.helpdoc-suomifi input[type="url"],
+.helpdoc-suomifi input[type="number"],
+.helpdoc-suomifi textarea {
+  display: block;
+  width: 100%;
+  padding: var(--fi-spacing-s) var(--fi-spacing-m);
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; /* bodyText */
+  font-weight: 400;
+  line-height: 24px; /* 1.5 */
+  color: var(--fi-color-text);
+  background-color: #ffffff;
+  border: 1px solid var(--fi-color-depth-light-1);
+  border-radius: 2px;
+  min-height: 44px; /* Saavutettavuus: vähintään 44px korkea */
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.helpdoc-suomifi textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.helpdoc-suomifi input[type="text"]:hover:not(:disabled),
+.helpdoc-suomifi input[type="search"]:hover:not(:disabled),
+.helpdoc-suomifi input[type="email"]:hover:not(:disabled),
+.helpdoc-suomifi input[type="tel"]:hover:not(:disabled),
+.helpdoc-suomifi input[type="url"]:hover:not(:disabled),
+.helpdoc-suomifi input[type="number"]:hover:not(:disabled),
+.helpdoc-suomifi textarea:hover:not(:disabled) {
+  border-color: var(--fi-color-depth-dark-1);
+}
+
+.helpdoc-suomifi input[type="text"]:focus,
+.helpdoc-suomifi input[type="search"]:focus,
+.helpdoc-suomifi input[type="email"]:focus,
+.helpdoc-suomifi input[type="tel"]:focus,
+.helpdoc-suomifi input[type="url"]:focus,
+.helpdoc-suomifi input[type="number"]:focus,
+.helpdoc-suomifi textarea:focus {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+  border-color: var(--fi-color-highlight-base);
+}
+
+.helpdoc-suomifi input[type="text"]:disabled,
+.helpdoc-suomifi input[type="search"]:disabled,
+.helpdoc-suomifi input[type="email"]:disabled,
+.helpdoc-suomifi input[type="tel"]:disabled,
+.helpdoc-suomifi input[type="url"]:disabled,
+.helpdoc-suomifi input[type="number"]:disabled,
+.helpdoc-suomifi textarea:disabled {
+  background-color: var(--fi-color-depth-light-3);
+  border-color: var(--fi-color-depth-light-1);
+  color: var(--fi-color-text-secondary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.helpdoc-suomifi input[type="text"]::placeholder,
+.helpdoc-suomifi input[type="search"]::placeholder,
+.helpdoc-suomifi input[type="email"]::placeholder,
+.helpdoc-suomifi input[type="tel"]::placeholder,
+.helpdoc-suomifi input[type="url"]::placeholder,
+.helpdoc-suomifi input[type="number"]::placeholder,
+.helpdoc-suomifi textarea::placeholder {
+  color: var(--fi-color-text-secondary);
+  opacity: 0.7;
+}
+
+/* ============================================
    PANEELIT (Info / Warning / Error / Success / Note)
    ============================================ */
 
@@ -275,7 +592,7 @@ body {
   gap: var(--fi-spacing-m);
   align-items: flex-start;
   background-color: #ffffff;
-  border-radius: 4px;
+  border-radius: 2px;
   border: 1px solid var(--fi-color-depth-light-1);
   border-top-width: 4px;
   border-top-style: solid;
@@ -361,13 +678,16 @@ body {
 
 .helpdoc-suomifi .helpdoc-panel__content {
   flex: 1 1 auto;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 16px; /* bodyText */
+  font-weight: 400;
+  line-height: 24px; /* 1.5 */
 }
 
 .helpdoc-suomifi .helpdoc-panel__content strong {
   display: block;
-  font-size: 18px;
+  font-size: 18px; /* heading5 */
+  font-weight: 600;
+  line-height: 24px; /* 1.33 */
   margin-bottom: var(--fi-spacing-xs);
 }
 
@@ -379,8 +699,9 @@ body {
   width: 100%;
   border-collapse: collapse;
   margin: var(--fi-spacing-m) 0 var(--fi-spacing-s);
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 14px; /* smallText */
+  font-weight: 400;
+  line-height: 20px; /* 1.43 */
 }
 
 .helpdoc-suomifi th,
@@ -443,14 +764,15 @@ body {
 /* Monirivinen code-block */
 .helpdoc-suomifi pre {
   font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 0.9rem;
+  font-size: 14px; /* smallText */
+  font-weight: 400;
+  line-height: 20px; /* 1.43 */
   background-color: var(--fi-color-depth-light-3);
   padding: var(--fi-spacing-s) var(--fi-spacing-m);
-  border-radius: 4px;
+  border-radius: 2px;
   border: 1px solid var(--fi-color-depth-light-1);
   overflow-x: auto;
   margin: var(--fi-spacing-s) 0;
-  line-height: 1.5;
 }
 
 .helpdoc-suomifi pre code {
@@ -467,7 +789,7 @@ body {
 
 .helpdoc-suomifi .helpdoc-expander {
   border: 1px solid var(--fi-color-depth-light-1);
-  border-radius: 4px;
+  border-radius: 2px;
   margin: var(--fi-spacing-s) 0 var(--fi-spacing-m);
   background-color: #ffffff;
   overflow: hidden;
@@ -478,7 +800,9 @@ body {
   background-color: #ffffff;
   border: none;
   padding: var(--fi-spacing-s) var(--fi-spacing-l);
-  font-size: 1rem;
+  font-size: 16px; /* bodyText */
+  font-weight: 400;
+  line-height: 24px; /* 1.5 */
   text-align: left;
   display: flex;
   align-items: center;
@@ -503,7 +827,9 @@ body {
 }
 
 .helpdoc-suomifi .helpdoc-expander__chevron {
-  font-size: 0.9rem;
+  font-size: 14px; /* smallText */
+  font-weight: 400;
+  line-height: 20px; /* 1.43 */
   color: var(--fi-color-depth-base);
   transition: transform 0.2s ease;
   flex-shrink: 0;
@@ -542,12 +868,11 @@ body {
 .helpdoc-suomifi .helpdoc-status {
   display: inline-flex;
   align-items: center;
-  padding: var(--fi-spacing-xs) var(--fi-spacing-s);
+  padding: 2px var(--fi-spacing-s);
   border-radius: 999px;
-  font-size: 0.8rem;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.03em;
-  text-transform: uppercase;
   line-height: 1.2;
 }
 
@@ -669,7 +994,7 @@ body {
   max-width: 100%;
   height: auto;
   margin: var(--fi-spacing-m) 0;
-  border-radius: 4px;
+  border-radius: 2px;
   display: block;
 }
 
@@ -685,7 +1010,9 @@ body {
 }
 
 .helpdoc-suomifi figcaption {
-  font-size: 0.9rem;
+  font-size: 14px; /* smallText */
+  font-weight: 400;
+  line-height: 20px; /* 1.43 */
   color: var(--fi-color-text-secondary);
   margin-top: var(--fi-spacing-xs);
   font-style: italic;
@@ -694,8 +1021,472 @@ body {
 }
 
 /* ============================================
+   LAYOUT-TYYLIT (Editor Shell) - Suomi.fi Design System
+   ============================================ */
+
+/* Full-height container */
+.helpdoc-suomifi.helpdoc-shell-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Header bar - kiinteä yläosa */
+.helpdoc-suomifi header.helpdoc-shell-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--fi-spacing-l) var(--fi-spacing-xl);
+  background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%); /* Hienovarainen tumma gradient */
+  border-bottom: none; /* Poistetaan harmaa raita */
+  min-height: 80px; /* Hieman korkeampi */
+  position: relative;
+  color: #ffffff; /* Valkoinen teksti */
+}
+
+/* Oranssi raita alareunassa */
+.helpdoc-suomifi header.helpdoc-shell-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--fi-color-accent-base); /* Oranssi */
+}
+
+/* Main content area - flex: 1, täyttää jäljellä olevan tilan */
+.helpdoc-suomifi main.helpdoc-shell-main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Navigation rail (vasen kolumni) */
+.helpdoc-suomifi nav.helpdoc-shell-nav {
+  flex-shrink: 0;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fi-color-depth-light-3);
+  border-right: 1px solid var(--fi-color-depth-light-1);
+  padding: var(--fi-spacing-m);
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Side Navigation items - Harmonoi headerin tumman sävyn kanssa */
+.helpdoc-suomifi nav.helpdoc-shell-nav button {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  padding: 8px 16px;
+  border-radius: 0;
+  min-height: 44px;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; /* Pienennetty 18px → 16px */
+  font-weight: 400;
+  line-height: 24px; /* Pienennetty 27px → 24px */
+  color: var(--fi-color-text); /* #212121 - musta, harmonisoi headerin tumman sävyn kanssa */
+  transition: background-color 0.2s ease, color 0.2s ease, font-weight 0.15s ease;
+}
+
+.helpdoc-suomifi nav.helpdoc-shell-nav button:hover {
+  background-color: #d0d0d0; /* Keskivaalea harmaa */
+  color: var(--fi-color-text); /* #212121 - pysyy mustana */
+}
+
+.helpdoc-suomifi nav.helpdoc-shell-nav button:focus-visible {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+}
+
+/* Selected/Active state - tumma harmaa tausta, valkoinen teksti (harmonisoi headerin kanssa) */
+.helpdoc-suomifi nav.helpdoc-shell-nav button.selected,
+.helpdoc-suomifi nav.helpdoc-shell-nav button[aria-current="true"] {
+  background-color: #3a3a3a; /* Tumma harmaa, harmonisoi headerin #2a2a2a kanssa mutta hieman tummempi */
+  font-weight: 600;
+  color: #ffffff; /* Valkoinen teksti, vastaa headerin valkoista tekstiä */
+  border-radius: 2px; /* Hienovarainen pyöristys */
+}
+
+/* Active indicator - oranssi vasen border (harmonisoi headerin kanssa) */
+.helpdoc-suomifi nav.helpdoc-shell-nav button.selected::before,
+.helpdoc-suomifi nav.helpdoc-shell-nav button[aria-current="true"]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--fi-color-accent-base); /* Oranssi #e86717 */
+  z-index: 1;
+}
+
+/* Nested navigation items (subcategories) */
+.helpdoc-suomifi nav.helpdoc-shell-nav ul ul {
+  background-color: rgba(58, 58, 58, 0.04); /* Tumma harmaa, alhainen opacity (4%) */
+  border-radius: 2px;
+  padding: 4px 0;
+  margin-top: 4px;
+}
+
+.helpdoc-suomifi nav.helpdoc-shell-nav ul ul button {
+  padding: 6px 16px; /* Pienempi vertikaalinen padding kuin pääkategoriat (8px → 6px) */
+  padding-left: var(--fi-spacing-xl);
+  font-size: 14px; /* Pienennetty 16px → 14px */
+  font-weight: 400;
+  line-height: 20px; /* Pienennetty 24px → 20px */
+  color: var(--fi-color-text-secondary); /* #565656 - harmaa */
+  min-height: 36px; /* Pienempi min-height kuin pääkategoriat (44px → 36px) */
+}
+
+/* Nested items hover state */
+.helpdoc-suomifi nav.helpdoc-shell-nav ul ul button:hover {
+  background-color: #d0d0d0; /* Sama kuin pääkategorioiden hover */
+  color: var(--fi-color-text); /* Tummenee mustaksi */
+}
+
+/* Nested items focus state */
+.helpdoc-suomifi nav.helpdoc-shell-nav ul ul button:focus-visible {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+}
+
+/* Nested items selected state */
+.helpdoc-suomifi nav.helpdoc-shell-nav ul ul button.selected,
+.helpdoc-suomifi nav.helpdoc-shell-nav ul ul button[aria-current="true"] {
+  background-color: transparent; /* Ei taustaväriä, eroaa pääkategoriasta */
+  font-weight: 600;
+  color: #2a2a2a; /* Tumma harmaa, harmonisoi headerin kanssa */
+}
+
+/* Nested items indicator - poistettu alakategorioilta */
+.helpdoc-suomifi nav.helpdoc-shell-nav ul ul button.selected::before,
+.helpdoc-suomifi nav.helpdoc-shell-nav ul ul button[aria-current="true"]::before {
+  display: none; /* Ei vasenta borderia alakategorioille */
+}
+
+/* Chevron-ikonin animaatio */
+.helpdoc-shell-nav-chevron {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.helpdoc-shell-nav-chevron.expanded {
+  transform: rotate(180deg);
+}
+
+/* Middle column (list view) */
+.helpdoc-suomifi section.helpdoc-shell-section {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-right: 1px solid var(--fi-color-depth-light-1);
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* Right column (editor panel) */
+.helpdoc-suomifi aside.helpdoc-shell-aside {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* Scrollable content areas */
+.helpdoc-suomifi .helpdoc-shell-scrollable {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+}
+
+/* List items */
+.helpdoc-suomifi .helpdoc-shell-list-item {
+  padding: var(--fi-spacing-s) var(--fi-spacing-l);
+  border-bottom: 1px solid var(--fi-color-depth-light-2);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.helpdoc-suomifi .helpdoc-shell-list-item:hover {
+  background-color: var(--fi-color-highlight-light-2);
+}
+
+.helpdoc-suomifi .helpdoc-shell-list-item.selected {
+  background-color: var(--fi-color-highlight-light-2);
+  border-left: 4px solid var(--fi-color-highlight-base);
+  padding-left: calc(var(--fi-spacing-l) - 4px);
+}
+
+.helpdoc-suomifi .helpdoc-shell-list-item:focus-visible {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: -3px;
+}
+
+/* Action bar */
+.helpdoc-suomifi .helpdoc-shell-action-bar {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.helpdoc-suomifi .helpdoc-shell-action-bar-main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--fi-spacing-s);
+  padding: var(--fi-spacing-m) var(--fi-spacing-l);
+  border-top: 1px solid var(--fi-color-depth-light-1);
+}
+
+.helpdoc-suomifi .helpdoc-shell-action-bar-tools {
+  display: flex;
+  gap: var(--fi-spacing-xs);
+}
+
+/* Icon buttons */
+.helpdoc-suomifi .helpdoc-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--fi-spacing-s);
+  padding: var(--fi-spacing-s) var(--fi-spacing-m);
+  border: none;
+  background-color: transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--fi-color-text);
+}
+
+.helpdoc-suomifi .helpdoc-icon-button:hover {
+  opacity: 0.7;
+}
+
+.helpdoc-suomifi .helpdoc-icon-button:focus-visible {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+}
+
+.helpdoc-suomifi .helpdoc-icon-button__icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(42%) sepia(95%) saturate(2000%) hue-rotate(195deg) brightness(0.85) contrast(1.1);
+}
+
+.helpdoc-suomifi .helpdoc-icon-button__text {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--fi-color-text);
+}
+
+/* Language tabs */
+.helpdoc-suomifi .helpdoc-shell-language-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--fi-color-depth-light-1);
+  flex-shrink: 0;
+  padding: 0 var(--fi-spacing-xl);
+  background-color: #ffffff;
+}
+
+.helpdoc-suomifi .helpdoc-language-tab {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  padding: var(--fi-spacing-m) var(--fi-spacing-l);
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--fi-color-text-secondary);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+}
+
+.helpdoc-suomifi .helpdoc-language-tab:hover {
+  color: var(--fi-color-text);
+  background-color: var(--fi-color-depth-light-3);
+}
+
+.helpdoc-suomifi .helpdoc-language-tab:focus-visible {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: -3px;
+}
+
+.helpdoc-suomifi .helpdoc-language-tab--active {
+  color: var(--fi-color-text);
+  font-weight: 600;
+  border-bottom-color: var(--fi-color-highlight-base);
+}
+
+.helpdoc-suomifi .helpdoc-language-tab--missing {
+  opacity: 0.6;
+}
+
+.helpdoc-suomifi .helpdoc-language-tab--missing:hover {
+  opacity: 1;
+}
+
+.helpdoc-suomifi .helpdoc-language-tab-plus {
+  margin-left: var(--fi-spacing-xs);
+  opacity: 0.7;
+  font-weight: 600;
+}
+
+/* Editor content area */
+.helpdoc-suomifi .helpdoc-shell-editor-content {
+  flex: 1;
+  padding: var(--fi-spacing-xl);
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* Editor header */
+.helpdoc-suomifi .helpdoc-shell-editor-header {
+  padding: var(--fi-spacing-l) var(--fi-spacing-xl);
+  border-bottom: 1px solid var(--fi-color-depth-light-1);
+  flex-shrink: 0;
+}
+
+/* Editable fields */
+.helpdoc-suomifi .helpdoc-editable-field-wrapper {
+  margin-bottom: var(--fi-spacing-s);
+}
+
+.helpdoc-suomifi .helpdoc-editable-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--fi-spacing-s);
+  cursor: pointer;
+  padding: var(--fi-spacing-xs);
+  margin: calc(var(--fi-spacing-xs) * -1);
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+}
+
+.helpdoc-suomifi .helpdoc-editable-field:hover {
+  background-color: var(--fi-color-depth-light-3);
+}
+
+.helpdoc-suomifi .helpdoc-editable-field--inline {
+  display: inline-flex;
+  justify-content: flex-start;
+}
+
+.helpdoc-suomifi .helpdoc-editable-field__icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+  filter: brightness(0) saturate(100%) invert(42%) sepia(95%) saturate(2000%) hue-rotate(195deg) brightness(0.85) contrast(1.1);
+}
+
+.helpdoc-suomifi .helpdoc-editable-field:hover .helpdoc-editable-field__icon {
+  opacity: 0.6;
+}
+
+.helpdoc-suomifi .helpdoc-editable-field:focus-within .helpdoc-editable-field__icon,
+.helpdoc-suomifi .helpdoc-editable-field:active .helpdoc-editable-field__icon {
+  opacity: 1;
+}
+
+/* Editable title input */
+.helpdoc-suomifi .helpdoc-editable-title {
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  padding: var(--fi-spacing-s) var(--fi-spacing-m);
+  border: 2px solid var(--fi-color-depth-light-1);
+  border-radius: 2px;
+  background-color: #ffffff;
+  color: var(--fi-color-text);
+  line-height: 1.5;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.helpdoc-suomifi .helpdoc-editable-title:hover:not(:disabled) {
+  border-color: var(--fi-color-depth-dark-1);
+}
+
+.helpdoc-suomifi .helpdoc-editable-title:focus {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+  border-color: var(--fi-color-highlight-base);
+}
+
+/* Editable key input */
+.helpdoc-suomifi .helpdoc-editable-key {
+  font-size: 0.9rem;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  padding: var(--fi-spacing-xs) var(--fi-spacing-s);
+  border: 2px solid var(--fi-color-depth-light-1);
+  border-radius: 2px;
+  background-color: #ffffff;
+  color: var(--fi-color-text-secondary);
+  line-height: 1.5;
+  min-width: 120px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.helpdoc-suomifi .helpdoc-editable-key:hover:not(:disabled) {
+  border-color: var(--fi-color-depth-dark-1);
+}
+
+.helpdoc-suomifi .helpdoc-editable-key:focus {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+  border-color: var(--fi-color-highlight-base);
+}
+
+/* ============================================
    YLEISET SIISTIMISET
    ============================================ */
+
+/* Screen reader -only tekstit (näkyvät vain screen reader -laitteille) */
+.helpdoc-suomifi .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 
 /* Poista oletusmarginaalit */
 .helpdoc-suomifi * {
@@ -723,6 +1514,199 @@ body {
 }
 
 /* ============================================
+   VARIABLE DRAWER
+   ============================================ */
+
+/* Overlay - tummentaa taustan kun drawer on auki */
+.helpdoc-variable-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+/* Drawer - avautuu oikealta */
+.helpdoc-variable-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 600px;
+  max-width: 90vw;
+  background-color: #ffffff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.3s ease;
+}
+
+/* Compare drawer - leveämpi diff-vertailua varten */
+.helpdoc-compare-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1200px;
+  max-width: 95vw;
+  background-color: #ffffff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Drawer header */
+.helpdoc-variable-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+/* Drawer sulku-nappi */
+.helpdoc-variable-drawer-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+  color: var(--fi-color-text);
+}
+
+.helpdoc-variable-drawer-close:hover {
+  background-color: var(--fi-color-depth-light-3);
+}
+
+.helpdoc-variable-drawer-close:focus {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+}
+
+/* Drawer sisältö */
+.helpdoc-variable-drawer-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--fi-spacing-l);
+}
+
+/* ============================================
+   PREVIEW MODAL
+   ============================================ */
+
+/* Overlay - tummentaa taustan kun modaali on auki */
+.helpdoc-preview-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+/* Modaali - keskellä ruutua */
+.helpdoc-preview-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Modaali header */
+.helpdoc-preview-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--fi-spacing-l);
+  border-bottom: 1px solid var(--fi-color-depth-light-1);
+  flex-shrink: 0;
+}
+
+/* Modaali sulku-nappi */
+.helpdoc-preview-modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+  color: var(--fi-color-text);
+}
+
+.helpdoc-preview-modal-close:hover {
+  background-color: var(--fi-color-depth-light-3);
+}
+
+.helpdoc-preview-modal-close:focus {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+}
+
+/* Modaali sisältö */
+.helpdoc-preview-modal-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--fi-spacing-l);
+}
+
+/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 
@@ -742,15 +1726,18 @@ body {
   }
   
   .helpdoc-suomifi h1 {
-    font-size: 1.75rem; /* 28px */
+    font-size: 32px; /* heading2 for mobile */
+    line-height: 40px;
   }
   
   .helpdoc-suomifi h2 {
-    font-size: 1.25rem; /* 20px */
+    font-size: 24px; /* heading3 for mobile */
+    line-height: 32px;
   }
   
   .helpdoc-suomifi h3 {
-    font-size: 1.125rem; /* 18px */
+    font-size: 20px; /* heading4 for mobile */
+    line-height: 28px;
   }
 }
 
@@ -767,6 +1754,127 @@ body {
   
   .helpdoc-suomifi .helpdoc-expander__header {
     cursor: default;
+  }
+}
+
+/* ============================================
+   SELECT DROPDOWN
+   ============================================ */
+
+.helpdoc-suomifi .helpdoc-select-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.helpdoc-suomifi .helpdoc-select-wrapper::after {
+  content: '';
+  position: absolute;
+  right: var(--fi-spacing-m);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-image: url('/baseIcons/icon-arrowhead-down.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.helpdoc-suomifi select {
+  display: block;
+  width: 100%;
+  padding: var(--fi-spacing-s) var(--fi-spacing-m);
+  padding-right: calc(var(--fi-spacing-m) + 10px + var(--fi-spacing-s)); /* Tila ikonille */
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; /* bodyText */
+  font-weight: 400;
+  line-height: 24px; /* 1.5 */
+  color: var(--fi-color-text);
+  background-color: #ffffff;
+  border: 1px solid var(--fi-color-depth-light-1);
+  border-radius: 2px;
+  min-height: 44px; /* Saavutettavuus: vähintään 44px korkea */
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  appearance: none; /* Poistaa selaimen oletusikonin */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.helpdoc-suomifi select:hover:not(:disabled) {
+  border-color: var(--fi-color-depth-dark-1);
+}
+
+.helpdoc-suomifi select:focus {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+  border-color: var(--fi-color-highlight-base);
+}
+
+.helpdoc-suomifi select:disabled {
+  background-color: var(--fi-color-depth-light-3);
+  border-color: var(--fi-color-depth-light-1);
+  color: var(--fi-color-text-secondary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ============================================
+   DATE PICKER - Suomi.fi Design System
+   ============================================ */
+
+.helpdoc-suomifi input[type="date"] {
+  display: block;
+  width: 100%;
+  padding: var(--fi-spacing-s) var(--fi-spacing-m);
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px; /* bodyText */
+  font-weight: 400;
+  line-height: 24px; /* 1.5 */
+  color: var(--fi-color-text);
+  background-color: #ffffff;
+  border: 1px solid var(--fi-color-depth-light-1);
+  border-radius: 2px;
+  min-height: 44px; /* Saavutettavuus: vähintään 44px korkea */
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.helpdoc-suomifi input[type="date"]:hover:not(:disabled) {
+  border-color: var(--fi-color-depth-dark-1);
+}
+
+.helpdoc-suomifi input[type="date"]:focus {
+  outline: 3px solid var(--fi-color-focus);
+  outline-offset: 2px;
+  border-color: var(--fi-color-highlight-base);
+}
+
+.helpdoc-suomifi input[type="date"]:disabled {
+  background-color: var(--fi-color-depth-light-3);
+  border-color: var(--fi-color-depth-light-1);
+  color: var(--fi-color-text-secondary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ============================================
+   TOAST NOTIFICATIONS
+   ============================================ */
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
